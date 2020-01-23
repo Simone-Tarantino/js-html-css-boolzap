@@ -7,10 +7,11 @@
 
 body {
   height: 100vh;
+  font-size: 15px;
 }
 
 .wrapper {
-  height: 95vh;
+  height: 96vh;
   width: 80%;
   margin: auto;
   position: absolute;
@@ -22,12 +23,65 @@ body {
   flex-direction: row;
 }
 
+.top-nav-l,
+.top-nav-r {
+  height: 75px;
+  width: 100%;
+  background-color: #EAEAEA;
+}
+
+.circle {
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+}
+
 /* parte sinistra */
 
 .left-section {
   width: 35%;
   height: 100%;
   background-color: red;
+}
+
+/* nav-s */
+
+.top-nav-l {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+.top-nav-l i {
+  font-size: 23px;
+  padding-right: 13px;
+  color: #B1B1B1;
+}
+
+/* notifica */
+
+.notification {
+  height: 85px;
+  width: 100%;
+  background-color: #8EDAFC;
+  display: flex;
+  align-items: center;
+}
+.notification i {
+  padding: 16px;
+  color: #8EDAFC;
+  background-color: white;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+.notification-text {
+  margin-left: 10px;
+  line-height: 23px;
+}
+.notification-text a {
+  color: #537A8C;
+  font-size: 13px;
 }
 
 /* parte destra */
@@ -37,6 +91,8 @@ body {
   height: 100%;
   background-color: green;
 }
+
+/* nav-d */
 
 /* background */
 
