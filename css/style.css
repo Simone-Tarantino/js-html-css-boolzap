@@ -198,17 +198,23 @@ body {
   padding-top: 50px;
 }
 
-.msg-container {
+.msg-container,
+.input-msg-container,
+.auto-msg-container {
   margin-bottom: 10px;
 }
-.msg-container::after {
+.msg-container::after,
+.input-msg-container::after,
+.auto-msg-container::after {
   content: "";
   display: table;
   clear: both;
 }
 
 .sent-msg,
-.recived-msg {
+.input-sent-msg,
+.recived-msg,
+.auto-recived-msg {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -218,16 +224,22 @@ body {
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
 }
 
-.sent-msg {
+.sent-msg,
+.input-sent-msg {
   float: right;
   background-color: #D5F9BA;
   margin-right: 70px;
 }
 
-.recived-msg {
+.recived-msg,
+.cpu-recived-msg {
   float: left;
   background-color: #FFF;
   margin-left: 70px;
+}
+
+.no-display{
+  display: none;
 }
 
 /* chat-input */
