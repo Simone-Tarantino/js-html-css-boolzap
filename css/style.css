@@ -18,14 +18,34 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: blue;
+  display: flex;
+  flex-direction: row;
 }
+
+/* parte sinistra */
+
+.left-section {
+  width: 35%;
+  height: 100%;
+  background-color: red;
+}
+
+/* parte destra */
+
+.right-section {
+  width: 65%;
+  height: 100%;
+  background-color: green;
+}
+
+/* background */
 
 .div-background-top {
   height: 14%;
   width: 100%;
   position: absolute;
   top: 0;
-  background-color: red;
+  background-color: #009688;
   z-index: -1;
 }
 
@@ -34,6 +54,6 @@ body {
   width: 100%;
   position: absolute;
   top: 14%;
-  background-color: green;
+  background-color: #DBDBD3;
   z-index: -1;
 }
