@@ -4,3 +4,36 @@
   box-sizing: border-box;
   font-family: 'Noto Sans', sans-serif;
 }
+
+body {
+  height: 100vh;
+}
+
+.wrapper {
+  height: 95vh;
+  width: 80%;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: blue;
+}
+
+.div-background-top {
+  height: 14%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: red;
+  z-index: -1;
+}
+
+.div-background-bot {
+  height: 86%;
+  width: 100%;
+  position: absolute;
+  top: 14%;
+  background-color: green;
+  z-index: -1;
+}
