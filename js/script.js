@@ -31,5 +31,11 @@ function sendMsg() {
     msgSect.children().prepend(msg);
     $('.main-chat').append(msgSect);
     msg = $('#message').val('');
+    setTimeout(function() {
+      var autoMsg = 'Ok';
+      var autoMsgSect = $('.no-display .auto-msg-container').clone();
+      autoMsgSect.children().prepend(autoMsg);
+      $('.main-chat').append(autoMsgSect);
+    }, 1000);
   }
 }

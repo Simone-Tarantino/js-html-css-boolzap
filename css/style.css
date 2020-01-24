@@ -258,20 +258,19 @@ body {
 .dropdown {
   background-color: #FFF;
   position: absolute;
-  bottom: -39px;
+  bottom: -58px;
   z-index: 2;
   right: -50px;
-  border-radius: 5px;
   display: none;
   min-width: 136px;
-
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
 }
 .dropdown ul li {
   list-style: none;
-  font-size: 13px;
-  padding: 5px 10px;
+  font-size: 10px;
+  padding: 10px 15px;
   text-align: center;
-
+  cursor: pointer;
 }
 
 .sent-msg,
@@ -282,7 +281,7 @@ body {
 }
 
 .recived-msg,
-.cpu-recived-msg {
+.auto-recived-msg {
   float: left;
   background-color: #FFF;
   margin-left: 70px;
@@ -291,6 +290,7 @@ body {
 .no-display{
   display: none;
 }
+
 
 /* chat-input */
 
