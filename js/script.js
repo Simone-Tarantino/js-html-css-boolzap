@@ -11,7 +11,11 @@ $(document).ready (function(){
   });
 
   // dropdown chat
-  $('')
+  $(document).on('click', 'i.fa-chevron-down', function() {
+    $(this).next().toggle();
+  });
+
+
 
 });
 

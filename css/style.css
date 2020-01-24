@@ -8,6 +8,7 @@
 body {
   height: 100vh;
   font-size: 15px;
+  min-width: 1069px;
 }
 
 .wrapper {
@@ -21,6 +22,7 @@ body {
   display: flex;
   flex-direction: row;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3);
+  min-width: 869px;
 }
 
 .top-nav-l,
@@ -236,24 +238,40 @@ body {
   right: 5px;
   color: rgb(140, 140, 140);
 }
-.sent-msg:hover .dropdown-ico,
-.input-sent-msg:hover .dropdown-ico,
-.recived-msg:hover .dropdown-ico,
-.auto-recived-msg:hover .dropdown-ico {
+.sent-msg:hover .dropdown-ico i,
+.input-sent-msg:hover .dropdown-ico i,
+.recived-msg:hover .dropdown-ico i,
+.auto-recived-msg:hover .dropdown-ico i {
   display: inline-block;
 }
 
-.dropdown-ico {
+.dropdown-ico i {
   position: absolute;
   right: 13px;
+  bottom: 21px;
   color: rgb(140, 140, 140);
   display: none;
 }
-.dropdown-ico:hover {
-  color: #000;
+
+
+.dropdown {
+  background-color: #FFF;
+  position: absolute;
+  bottom: -39px;
+  z-index: 2;
+  right: -50px;
+  border-radius: 5px;
+  display: none;
+  min-width: 136px;
+
 }
+.dropdown ul li {
+  list-style: none;
+  font-size: 13px;
+  padding: 5px 10px;
+  text-align: center;
 
-
+}
 
 .sent-msg,
 .input-sent-msg {
