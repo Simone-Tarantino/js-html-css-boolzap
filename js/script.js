@@ -24,18 +24,19 @@ $(document).ready (function(){
   // funcion per inviare messaggio e ricevere risposta automatica
   function sendMsg() {
     var msg = $('#message').val();
+    // se il messaggio è lungo 1 o più caratteri viene stampato altrimenti no
     if (msg.length >= 1) {
       var msgSect = $('.no-display .input-msg-container').clone();
       msgSect.children().prepend(msg);
       $('.main-chat').append(msgSect);
       msg = $('#message').val('');
-
+      // inseriamo l'orario corrente del messaggio
       var time = new Date();
       var hours = addZero(time.getHours());
       var minutes = addZero(time.getMinutes());
       var displayTime = hours +':'+ minutes;
       msgSect.find('.msg-current-time').text(displayTime);
-
+      // riceviamo una risposta automatica dal computer
       setTimeout(function() {
         var autoMsg = 'Ok';
         var autoMsgSect = $('.no-display .auto-msg-container').clone();
@@ -46,6 +47,7 @@ $(document).ready (function(){
     }
   }
 
+  // aggiunge lo zero sui numeri minori di 10 nell'orario
   function addZero(number) {
     if(number < 10) {
       number = '0' + number;
