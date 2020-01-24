@@ -1,4 +1,4 @@
-$(document).ready (function(){
+$(document).ready (function() {
   // inviare messaggio con tasto enter
   $('#message').keypress(function (event) {
     if(event.which == 13 || event.keyCode == 13) {
@@ -19,6 +19,15 @@ $(document).ready (function(){
   $(document).on('click', '.delete', function() {
     $(this).parents('.go-delete').remove();
   });
+
+  // scrivo una lettera nell'input e prendo quel valore
+  $('#search-name').keyup(function() {
+    var userIn = $('#search-name').val();
+    console.log(userIn);
+  });
+  // prendo tutti i nomi
+  // verifico che quella lettera/e corrispondano a qualche nome della lista
+  // a chi non corrisponde lo nascondo
 
 
   // funcion per inviare messaggio e ricevere risposta automatica
