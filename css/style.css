@@ -167,7 +167,6 @@ body {
   align-items: center;
 }
 .top-nav-r img {
-  flex-grow: 10%;
   margin-left: 10px;
 }
 
@@ -232,18 +231,29 @@ body {
 .input-sent-msg::after,
 .recived-msg::after,
 .auto-recived-msg::after {
-  content: '13:49';
   position: absolute;
   font-size: 10px;
   bottom: 5px;
   right: 5px;
   color: rgb(140, 140, 140);
 }
+.sent-msg::after,
+.recived-msg::after {
+  content: '13:49';
+}
 .sent-msg:hover .dropdown-ico i,
 .input-sent-msg:hover .dropdown-ico i,
 .recived-msg:hover .dropdown-ico i,
 .auto-recived-msg:hover .dropdown-ico i {
   display: inline-block;
+}
+
+.msg-current-time {
+  position: absolute;
+  font-size: 10px;
+  bottom: 5px;
+  right: 5px;
+  color: rgb(140, 140, 140);
 }
 
 .dropdown-ico i {
@@ -290,7 +300,6 @@ body {
 .no-display{
   display: none;
 }
-
 
 /* chat-input */
 
