@@ -24,10 +24,11 @@ $(document).ready (function() {
   $('#search-name').keyup(function() {
     var userIn = $('#search-name').val();
     console.log(userIn);
+    // prendo tutti i nomi
+    // verifico che quella lettera/e corrispondano a qualche nome della lista
+    // a chi non corrisponde lo nascondo
   });
-  // prendo tutti i nomi
-  // verifico che quella lettera/e corrispondano a qualche nome della lista
-  // a chi non corrisponde lo nascondo
+
 
 
   // funcion per inviare messaggio e ricevere risposta automatica
