@@ -20,13 +20,22 @@ $(document).ready (function() {
     $(this).parents('.go-delete').remove();
   });
 
-  // scrivo una lettera nell'input e prendo quel valore
+  // ricerca nome sulla lista chat
   $('#search-name').keyup(function() {
-    var userIn = $('#search-name').val();
+    var userIn = $('#search-name').val().toLowerCase();
     console.log(userIn);
-    // prendo tutti i nomi
-    // verifico che quella lettera/e corrispondano a qualche nome della lista
-    // a chi non corrisponde lo nascondo
+
+    $('.chat-name').each(function(){
+      var chatListName = $(this).text().toLowerCase();
+      console.log(chatListName);
+      var chatListDiv = $(this).parents('.chat-info');
+      console.log(chatListDiv);
+      if (chatListName.includes(userIn) == false) {
+        $(chatListDiv).hide();
+      } else {
+        $(chatListDiv).show();
+      }
+    });
   });
 
 
