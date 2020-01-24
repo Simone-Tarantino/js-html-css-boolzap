@@ -26,9 +26,10 @@ $(document).ready (function(){
 
 function sendMsg() {
   var msg = $('#message').val();
-  console.log(msg);
-  var msgSect = $('.no-display .input-msg-container').clone();
-  msgSect.children().prepend(msg);
-  $('.main-chat').append(msgSect);
-  msg = $('#message').val('');
+  if (msg.length >= 1) {
+    var msgSect = $('.no-display .input-msg-container').clone();
+    msgSect.children().prepend(msg);
+    $('.main-chat').append(msgSect);
+    msg = $('#message').val('');
+  }
 }
