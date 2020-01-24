@@ -15,7 +15,10 @@ $(document).ready (function(){
     $(this).next().toggle();
   });
 
-
+  // click su elimina per cancellare messaggio
+  $(document).on('click', '.delete', function() {
+    $(this).parents('.go-delete').remove();
+  });
 
 });
 
