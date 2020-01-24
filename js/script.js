@@ -4,7 +4,7 @@ $(document).ready (function(){
       var msg = $('#message').val();
       console.log(msg);
       var msgSect = $('.no-display .input-msg-container').clone();
-      msgSect.next().append(msg);
+      msgSect.children().prepend(msg);
       $('.main-chat').append(msgSect);
     }
   });
