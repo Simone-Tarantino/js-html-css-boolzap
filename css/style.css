@@ -236,6 +236,24 @@ body {
   right: 5px;
   color: rgb(140, 140, 140);
 }
+.sent-msg:hover .dropdown-ico,
+.input-sent-msg:hover .dropdown-ico,
+.recived-msg:hover .dropdown-ico,
+.auto-recived-msg:hover .dropdown-ico {
+  display: inline-block;
+}
+
+.dropdown-ico {
+  position: absolute;
+  right: 13px;
+  color: rgb(140, 140, 140);
+  display: none;
+}
+.dropdown-ico:hover {
+  color: #000;
+}
+
+
 
 .sent-msg,
 .input-sent-msg {
