@@ -43,11 +43,16 @@ $(document).ready (function() {
   console.log(chatPosition);
   var eqChat = $('.top-nav-r').eq(chatPosition);
   console.log(eqChat);
+  var eqMainChat = $('.main-chat').eq(chatPosition);
+  console.log(eqMainChat);
   $('.chat-info').removeClass('chat-info-active');
   $(this).addClass('chat-info-active');
   $('.top-nav-r').hide();
   $('.top-nav-r-active').hide();
   eqChat.show().css('display', 'flex');
+  $('.main-chat-active').hide();
+  $('.main-chat').hide();
+  eqMainChat.show();
   });
 
 

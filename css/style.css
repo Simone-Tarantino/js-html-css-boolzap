@@ -211,6 +211,13 @@ body {
   overflow-y: scroll;
   background-image: url("../img/bg.png");
   padding-top: 50px;
+  display: none;
+}
+.main-chat-active {
+  height: calc(100% - (75px + 70px));
+  overflow-y: scroll;
+  background-image: url("../img/bg.png");
+  padding-top: 50px;
 }
 
 .msg-container,
