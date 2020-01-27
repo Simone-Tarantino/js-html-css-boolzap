@@ -26,7 +26,8 @@ body {
 }
 
 .top-nav-l,
-.top-nav-r {
+.top-nav-r,
+.top-nav-r-active {
   height: 75px;
   width: 100%;
   background-color: #EAEAEA;
@@ -37,6 +38,10 @@ body {
   background-color: #F2F2F2;
   border-radius: 50%;
   border: 1px solid black;
+}
+
+.no-display {
+  display: none;
 }
 
 /* parte sinistra */
@@ -133,6 +138,9 @@ body {
   background-color: #E9EBEB;
   cursor: pointer;
 }
+.chat-info-active {
+  background-color: #E9EBEB;
+}
 
 .name-text {
   margin-left: 15px;
@@ -161,12 +169,18 @@ body {
 
 /* nav-d */
 
-.top-nav-r {
+.top-nav-r-active {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.top-nav-r img {
+.top-nav-r {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+}
+.top-nav-r img,
+.top-nav-r-active img {
   margin-left: 10px;
 }
 
@@ -294,10 +308,6 @@ body {
   float: left;
   background-color: #FFF;
   margin-left: 70px;
-}
-
-.no-display{
-  display: none;
 }
 
 /* chat-input */

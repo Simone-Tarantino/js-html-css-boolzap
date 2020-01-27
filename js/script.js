@@ -38,6 +38,17 @@ $(document).ready (function() {
     });
   });
 
+  $(document).on('click', '.chat-info', function() {
+  var chatPosition = $(this).index();
+  console.log(chatPosition);
+  var eqChat = $('.top-nav-r').eq(chatPosition);
+  console.log(eqChat);
+  $('.chat-info').removeClass('chat-info-active');
+  $(this).addClass('chat-info-active');
+  $('.top-nav-r').hide();
+  $('.top-nav-r-active').hide();
+  eqChat.show().css('display', 'flex');
+  });
 
 
   // funcion per inviare messaggio e ricevere risposta automatica
