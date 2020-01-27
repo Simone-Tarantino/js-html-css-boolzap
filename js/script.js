@@ -1,12 +1,12 @@
 $(document).ready (function() {
   // inviare messaggio con tasto enter
-  $('#message').keypress(function (event) {
+  $(document).on('keypress', '#message', function (event) {
     if(event.which == 13 || event.keyCode == 13) {
       sendMsg();
     }
   });
   // inviare messaggio con click su icon
-  $('i.fa-paper-plane').click(function() {
+  $(document).on('click', 'i.fa-paper-plane', function() {
     sendMsg();
   });
 
@@ -39,20 +39,23 @@ $(document).ready (function() {
   });
 
   $(document).on('click', '.chat-info', function() {
-  var chatPosition = $(this).index();
-  console.log(chatPosition);
-  var eqChat = $('.top-nav-r').eq(chatPosition);
-  console.log(eqChat);
-  var eqMainChat = $('.main-chat').eq(chatPosition);
-  console.log(eqMainChat);
-  $('.chat-info').removeClass('chat-info-active');
-  $(this).addClass('chat-info-active');
-  $('.top-nav-r').hide();
-  $('.top-nav-r-active').hide();
-  eqChat.show().css('display', 'flex');
-  $('.main-chat-active').hide();
-  $('.main-chat').hide();
-  eqMainChat.show();
+    var chatPosition = $(this).index();
+    console.log(chatPosition);
+    var eqChat = $('.top-nav-r').eq(chatPosition);
+    console.log(eqChat);
+    var eqMainChat = $('.main-chat').eq(chatPosition);
+    console.log(eqMainChat);
+    //
+    $('.chat-info').removeClass('chat-info-active');
+    $(this).addClass('chat-info-active');
+    //
+    $('.top-nav-r').hide();
+    $('.top-nav-r-active').hide();
+    eqChat.show().css('display', 'flex');
+    $('.main-chat-active').hide();
+    $('.main-chat').hide();
+    $('.main-chat').removeClass('active');
+    eqMainChat.show().addClass('active');
   });
 
 
@@ -63,7 +66,7 @@ $(document).ready (function() {
     if (msg.length >= 1) {
       var msgSect = $('.no-display .input-msg-container').clone();
       msgSect.children().prepend(msg);
-      $('.main-chat').append(msgSect);
+      $('.main-chat.active').append(msgSect);
       msg = $('#message').val('');
       // inseriamo l'orario corrente del messaggio
       var time = new Date();
@@ -76,7 +79,7 @@ $(document).ready (function() {
         var autoMsg = 'Ok';
         var autoMsgSect = $('.no-display .auto-msg-container').clone();
         autoMsgSect.children().prepend(autoMsg);
-        $('.main-chat').append(autoMsgSect);
+        $('.main-chat.active').append(autoMsgSect);
         autoMsgSect.find('.msg-current-time').text(displayTime);
       }, 1000);
     }
