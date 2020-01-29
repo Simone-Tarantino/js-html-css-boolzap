@@ -7,7 +7,7 @@ $(document).ready (function() {
   });
   // inviare messaggio con click su icon
   $(document).on('click', 'i.fa-paper-plane', function() {
-    sendMsg();
+    vsendMsg();
   });
 
   // dropdown chat
@@ -58,32 +58,80 @@ $(document).ready (function() {
     eqMainChat.show().addClass('active');
   });
 
+  // funzione per inviare e ricevere messaggio automatico con Handlebars
 
-  // funcion per inviare messaggio e ricevere risposta automatica
   function sendMsg() {
+    var source = $('#msg-user').html();
+    var template = Handlebars.compile(source);
+
     var msg = $('#message').val();
-    // se il messaggio è lungo 1 o più caratteri viene stampato altrimenti no
+
     if (msg.length >= 1) {
-      var msgSect = $('.no-display .input-msg-container').clone();
-      msgSect.children().prepend(msg);
-      $('.main-chat.active').append(msgSect);
-      msg = $('#message').val('');
-      // inseriamo l'orario corrente del messaggio
       var time = new Date();
       var hours = addZero(time.getHours());
       var minutes = addZero(time.getMinutes());
       var displayTime = hours +':'+ minutes;
-      msgSect.find('.msg-current-time').text(displayTime);
-      // riceviamo una risposta automatica dal computer
-      setTimeout(function() {
+
+      var context = {
+        'textSent' : msg,
+        'time' : displayTime
+      };
+
+      var html = template(context);
+      $('.main-chat.active').append(html);
+      msg = $('#message').val('');
+
+      setTimeout(function(){
+        var source = $('#reply').html();
+        var template = Handlebars.compile(source);
+
         var autoMsg = 'Ok';
-        var autoMsgSect = $('.no-display .auto-msg-container').clone();
-        autoMsgSect.children().prepend(autoMsg);
-        $('.main-chat.active').append(autoMsgSect);
-        autoMsgSect.find('.msg-current-time').text(displayTime);
+
+        var time = new Date();
+        var hours = addZero(time.getHours());
+        var minutes = addZero(time.getMinutes());
+        var displayTime = hours +':'+ minutes;
+
+        var context = {
+          'reply' : autoMsg,
+          'time' : displayTime
+        };
+
+        var html = template(context);
+        $('.main-chat.active').append(html);
+
       }, 1000);
     }
   }
+
+  // funcion per inviare messaggio e ricevere risposta automatica (versione senza handlebars)
+
+  // function sendMsg() {
+  //   var msg = $('#message').val();
+  //   // se il messaggio è lungo 1 o più caratteri viene stampato altrimenti no
+  //   if (msg.length >= 1) {
+  //     var msgSect = $('.no-display .input-msg-container').clone();
+  //     msgSect.children().prepend(msg);
+  //     $('.main-chat.active').append(msgSect);
+  //     msg = $('#message').val('');
+  //     // inseriamo l'orario corrente del messaggio
+  //     var time = new Date();
+  //     var hours = addZero(time.getHours());
+  //     var minutes = addZero(time.getMinutes());
+  //     var displayTime = hours +':'+ minutes;
+  //     msgSect.find('.msg-current-time').text(displayTime);
+  //     // riceviamo una risposta automatica dal computer
+  //     setTimeout(function() {
+  //       var autoMsg = 'Ok';
+  //       var autoMsgSect = $('.no-display .auto-msg-container').clone();
+  //       autoMsgSect.children().prepend(autoMsg);
+  //       $('.main-chat.active').append(autoMsgSect);
+  //       autoMsgSect.find('.msg-current-time').text(displayTime);
+  //     }, 1000);
+  //   }
+  // }
+
+
 
   // aggiunge lo zero sui numeri minori di 10 nell'orario
   function addZero(number) {

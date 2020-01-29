@@ -6,6 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.2/handlebars.js" integrity="sha256-N5vR06TQIR+YD8oS0yndB1pu/EITeijW52dwezEq7/g=" crossorigin="anonymous"></script>
     <script src="js/script.js" charset="utf-8"></script>
     <title>Boolzap</title>
   </head>
@@ -558,39 +559,47 @@
     </div>
     <!-- modello base messaggio utente -->
     <div class="no-display">
-      <div class="input-msg-container go-delete">
-        <div class="input-sent-msg">
-          <div class="dropdown-ico">
-            <i class="fas fa-chevron-down"></i>
-            <div class="dropdown">
-              <ul>
-                <li>Info messaggio</li>
-                <li class="delete">Elimina messaggio</li>
-              </ul>
+      <script id="msg-user" type="text/x-handlebars-template">
+        <div class="input-msg-container go-delete">
+          <div class="input-sent-msg">
+            {{textSent}}
+            <div class="dropdown-ico">
+              <i class="fas fa-chevron-down"></i>
+              <div class="dropdown">
+                <ul>
+                  <li>Info messaggio</li>
+                  <li class="delete">Elimina messaggio</li>
+                </ul>
+              </div>
+            </div>
+            <div class="msg-current-time">
+              {{time}}
             </div>
           </div>
-          <div class="msg-current-time">
-          </div>
         </div>
-      </div>
+      </script>
     </div>
     <!-- modello base messaggio risposta automatico -->
     <div class="no-display">
-      <div class="auto-msg-container go-delete">
-        <div class="auto-recived-msg">
-          <div class="dropdown-ico">
-            <i class="fas fa-chevron-down"></i>
-            <div class="dropdown">
-              <ul>
-                <li>Info messaggio</li>
-                <li class="delete">Elimina messaggio</li>
-              </ul>
+      <script id="reply" type="text/x-handlebars-template">
+        <div class="auto-msg-container go-delete">
+          <div class="auto-recived-msg">
+            {{reply}}
+            <div class="dropdown-ico">
+              <i class="fas fa-chevron-down"></i>
+              <div class="dropdown">
+                <ul>
+                  <li>Info messaggio</li>
+                  <li class="delete">Elimina messaggio</li>
+                </ul>
+              </div>
+            </div>
+            <div class="msg-current-time">
+              {{time}}
             </div>
           </div>
-          <div class="msg-current-time">
-          </div>
         </div>
-      </div>
+      </script>
     </div>
     <!-- background -->
     <div class="div-background-top">
